@@ -1,0 +1,34 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{{.title}}</title>
+    
+<link rel="stylesheet" href="static/style.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+    <div class="header">
+        ini adlah header
+    </div>
+
+    {{template "main" . }}
+
+
+    <div class="footer">
+        ini adlah footer
+    </div>
+
+
+</body>
+
+</html>
+
+{{end }}
