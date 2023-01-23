@@ -9,9 +9,8 @@ pipeline{
             }
         }
     }
-}
 
-post{
+    post{
     always{
         echo "menjalankan automation"
     }
@@ -25,3 +24,6 @@ post{
         echo "telah proses selesai"
     }
 }
+
+}
+
