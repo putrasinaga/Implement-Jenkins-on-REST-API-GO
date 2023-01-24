@@ -9,12 +9,12 @@ pipeline{
                 echo "========executing========"
                 sh'go build'
             }
+        }
 
-        stage{"build container"}
+        stage("build container"){
             steps{
                 echo "========Build image======"
                 sh'docker images'
-            }
         }
     }
 
