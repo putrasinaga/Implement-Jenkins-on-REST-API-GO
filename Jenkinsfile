@@ -17,7 +17,7 @@ pipeline{
                 sh'docker build -t putrasaut/web-simple-api .'
         }
     }
-        stage{"push to DockerHUb"}{
+        stage("push to DockerHUb"){
             steps{
                 echo "========Pushing======"
                 script {
