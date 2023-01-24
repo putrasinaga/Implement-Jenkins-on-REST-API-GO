@@ -13,7 +13,7 @@ pipeline{
         stage("build container"){
             steps{
                 echo "========Build image======"
-                sh'docker build -t putrasaut/web-simple-api'
+                sh'docker build -t putrasaut/web-simple-api .'
         }
     }    
     }
