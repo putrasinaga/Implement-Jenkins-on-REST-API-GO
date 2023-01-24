@@ -15,7 +15,18 @@ pipeline{
                 echo "========Build image======"
                 sh'docker build -t putrasaut/web-simple-api .'
         }
-    }    
+    }
+        stage{"push to DockerHUb"}{
+            steps{
+                echo "========Pushing======"`
+                script {
+                    withCredentials([string(credentialsId: 'Dockerhub-pass', variable: 'Dockerhub-pass')]) {
+                     sh 'docker login -u putrasaut -p ${Dockerhub-pass}'
+                    }
+                     sh 'docker push putrasaut/web-simple-api'
+                }
+            }
+        }    
     }
     
     post{
