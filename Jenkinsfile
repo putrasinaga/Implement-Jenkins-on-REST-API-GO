@@ -3,6 +3,7 @@ pipeline{
     tools {
         go '1.19'
     }
+    
     stages{
         stage("Build Go Project"){
             steps{
@@ -15,7 +16,7 @@ pipeline{
                 echo "========Build image======"
                 sh'docker build -t putrasaut/web-simple-api .'
         }
-    }
+    
         stage{"push to DockerHUb"}{
             steps{
                 echo "========Pushing======"
@@ -28,6 +29,7 @@ pipeline{
             }
         }    
     }
+
     
     post{
     always{
