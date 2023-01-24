@@ -1,10 +1,8 @@
 pipeline{
-    
     agent any 
     tools {
-        go '1.19.4'
+        go '1.19'
     }
-
     stages{
         stage("Build Go Project"){
             steps{
@@ -20,10 +18,10 @@ pipeline{
         echo "menjalankan automation"
     }
     success{
-        echo "deploy berhasil"
+        echo "berhasil"
     }
     failure{
-        echo "gagal, deploy"
+        echo "gagal"
     }
     cleanup{
         echo "telah proses selesai"
