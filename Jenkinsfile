@@ -13,7 +13,7 @@ pipeline{
         stage("build container"){
             steps{
                 echo "========Build image======"
-                sh'docker images'
+                sh'sudo docker images'
         }
     }    
     }
