@@ -1,11 +1,16 @@
 pipeline{
     
     agent any 
+    tools {
+        go '1.19.4'
+    }
 
     stages{
-        stage("A"){
+        stage("Build Go Project"){
             steps{
-                echo "========executing A========"
+                echo "========executing========"
+                sh'go build'
+
             }
         }
     }
