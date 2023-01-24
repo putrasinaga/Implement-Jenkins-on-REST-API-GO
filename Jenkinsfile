@@ -18,7 +18,7 @@ pipeline{
     }
         stage{"push to DockerHUb"}{
             steps{
-                echo "========Pushing======"`
+                echo "========Pushing======"
                 script {
                     withCredentials([string(credentialsId: 'Dockerhub-pass', variable: 'Dockerhub-pass')]) {
                      sh 'docker login -u putrasaut -p ${Dockerhub-pass}'
