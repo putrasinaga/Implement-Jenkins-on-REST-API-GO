@@ -10,13 +10,14 @@ pipeline{
                 sh'go build'
             }
         }
+    }
 
         stage("build container"){
             steps{
                 echo "========Build image======"
                 sh'docker images'
         }
-    }
+    }    
 
     post{
     always{
@@ -32,6 +33,7 @@ pipeline{
         echo "telah proses selesai"
     }
 }
-
 }
+
+
 
