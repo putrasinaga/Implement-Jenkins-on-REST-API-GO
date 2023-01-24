@@ -21,8 +21,8 @@ pipeline{
             steps{
                 echo "========Pushing======"
                 script {
-                    withCredentials([string(credentialsId: 'Dockerhub-pass', variable: 'Dockerhub-pass')]) {
-                     sh 'docker login -u putrasaut -p ${Dockerhub-pass}'
+                   withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpwd')]){
+                     sh 'docker login -u putrasaut -p ${dockerhubpwd}'
                     }
                      sh 'docker push putrasaut/web-simple-api'
                 }
