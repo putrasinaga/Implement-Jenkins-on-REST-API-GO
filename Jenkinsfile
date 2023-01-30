@@ -19,7 +19,7 @@ pipeline{
         stage("build container"){
             steps{
                 echo "========Build image======"
-                sh"docker build -t putrasaut/${params.Name} ."
+                sh"docker build -t putrasaut/${params.NAME} ."
         }
     }
         stage("push to DockerHUb"){
@@ -29,7 +29,7 @@ pipeline{
                    withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpwd')]){
                      sh 'docker login -u putrasaut -p ${dockerhubpwd}'
                     }
-                     sh "docker push putrasaut/${params.Name}"
+                     sh "docker push putrasaut/${params.NAME}"
                 }
             }
         }    
