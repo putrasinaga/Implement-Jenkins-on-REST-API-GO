@@ -6,7 +6,6 @@ pipeline{
 
  parameters{
     string(name : 'NAME', defaultValue: 'nama-project', description : 'silahkan masukan nama docker')
-    booleanParam(name: 'DEPLOY', defaultValue: false, description: 'apakah ingin dilanjutkan?')
  }
 
     stages{
@@ -23,6 +22,11 @@ pipeline{
         }
     }
         stage("push to DockerHUb"){
+            input{
+                message "lanjutkan deploy?"
+                ok "iya"
+                submitter "saut"
+            }
             steps{
                 echo "========Pushing======"
                 script {
