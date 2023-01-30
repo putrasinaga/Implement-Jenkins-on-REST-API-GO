@@ -31,7 +31,6 @@ pipeline{
                 echo "========Pushing======"
                 echo "${env.BUILD_NUMBER}"
                 echo "${env.JOB_NAME}"
-                echo "${env.TAG_DATE}"
                 script {
                    withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpwd')]){
                      sh 'docker login -u putrasaut -p ${dockerhubpwd}'
@@ -54,7 +53,7 @@ pipeline{
         echo "gagal"
     }
     cleanup{
-        echo "telah proses selesai"
+        echo "proses selesai"
     }
 }
 }
