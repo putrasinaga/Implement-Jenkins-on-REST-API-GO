@@ -5,7 +5,7 @@ pipeline{
     }
 
  parameters{
-    string(name : 'NAME', defaultValue: 'Guest', description : 'silahkan masukan nama docker')
+    string(name : 'NAME', defaultValue: 'nama-project', description : 'silahkan masukan nama docker')
     booleanParam(name: 'DEPLOY', defaultValue: false, description: 'apakah ingin dilanjutkan?')
  }
 
