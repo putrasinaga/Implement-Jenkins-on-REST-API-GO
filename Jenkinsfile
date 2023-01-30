@@ -23,12 +23,15 @@ pipeline{
     }
         stage("push to DockerHUb"){
             input{
-                message "lanjutkan deploy?"
-                ok "iya"
+                message "lanjutkan push ke dockerhub?"
+                ok "oke"
                 submitter "saut"
             }
             steps{
                 echo "========Pushing======"
+                echo "${env.BUILD_NUMBER}"
+                echo "${env.JOB_NAME}"
+                echo "${env.TAG_DATE}"
                 script {
                    withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpwd')]){
                      sh 'docker login -u putrasaut -p ${dockerhubpwd}'
